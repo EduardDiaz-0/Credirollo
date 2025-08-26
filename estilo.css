@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f9f7fc, #dfe9f3);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.title {
+  text-align: center;
+  color: #6a11cb;
+  margin-bottom: 20px;
+}
+
+.form-section label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-section input,
+.form-section select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106,17,203,0.3);
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#calcular {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  width: 100%;
+  transition: 0.3s;
+}
+
+#calcular:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 10px rgba(106,17,203,0.3);
+}
+
+#imprimir {
+  background: #28a745;
+  color: #fff;
+  display: block;
+  margin: 20px auto;
+  transition: 0.3s;
+}
+
+#imprimir:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 10px rgba(40,167,69,0.3);
+}
+
+.ticket {
+  background: #fafafa;
+  border: 2px dashed #333;
+  padding: 15px;
+  margin-top: 20px;
+  font-family: monospace;
+  border-radius: 10px;
+}
+
+.ticket h3 {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+thead {
+  background: #6a11cb;
+  color: #fff;
+}

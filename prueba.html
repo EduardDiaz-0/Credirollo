@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credirollo🤑🫰</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title"> Credirollo🤑🫰 </h1>
+
+    <!-- Formulario -->
+    <div class="form-section">
+      <label>Monto solicitado (MXN)</label>
+      <input type="number" id="monto" min="1000" step="100" placeholder="Ej: 5000">
+
+      <label>Plazo (número de cuotas)</label>
+      <input type="number" id="plazo" min="1" step="1">
+
+      <label>Periodo de pago</label>
+      <select id="periodo">
+        <option value="Diario">Diario</option>
+        <option value="Semanal">Semanal</option>
+        <option value="Quincenal">Quincenal</option>
+        <option value="Mensual">Mensual</option>
+        <option value="Bimestral">Bimestral</option>
+        <option value="Trimestral">Trimestral</option>
+        <option value="Anual">Anual</option>
+      </select>
+
+      <label>Tiempo de gracia (días)</label>
+      <input type="number" id="gracia" min="0" value="0">
+
+      <label>Tasa de interés (%)</label>
+      <input type="number" id="interes" readonly>
+
+      <button id="calcular">Calcular</button>
+    </div>
+
+    <!-- Ticket -->
+    <div id="ticket" class="ticket hidden"></div>
+    <button id="imprimir" class="hidden">🖨 Imprimir Ticket</button>
+
+    <!-- Cronograma -->
+    <h2 id="tituloCronograma" class="hidden">📅 Cronograma de pagos</h2>
+    <table id="tablaCronograma" class="hidden">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Fecha pago</th>
+          <th>Cuota</th>
+          <th>Interés</th>
+          <th>Capital</th>
+          <th>Saldo</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Conecta con tu JS externo -->
+  <script src="diseño.js"></script>
+
+  <script>
+    // Interés automático según periodo
+    const intereses = {
+      "Diario": 0.09,
+      "Semanal": 0.63,
+      "Quincenal": 1.26,
+      "Mensual": 2.51,
+      "Bimestral": 5.02,
+      "Trimestral": 7.53,
+      "Anual": 30.1
+    };
+
+    const periodoSelect = document.getElementById("periodo");
+    const interesInput = document.getElementById("interes");
+
+    // Actualizar interés al cambiar periodo
+    periodoSelect.addEventListener("change", () => {
+      const periodo = periodoSelect.value;
+      interesInput.value = intereses[periodo] !== undefined ? intereses[periodo] : "";
+    });
+
+    // Inicializar con el periodo por defecto
+    window.onload = () => {
+      interesInput.value = intereses[periodoSelect.value];
+    };
+  </script>
+</body>
+</html>
